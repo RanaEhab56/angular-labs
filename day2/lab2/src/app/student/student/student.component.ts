@@ -18,6 +18,9 @@ export class StudentComponent implements OnInit {
   viewStudent: Student = new Student(0, "hidden0000", 0, 0);
   student: Student = new Student(0, "hidden0000", 0, 0);
 
+  names: string[]=["rana","salma","ahmeeed"]
+ name="ahmed"
+
   addNewStudent(){
     this.students.push(new Student(this.newStudent.id,this.newStudent.name,this.newStudent.age,this.newStudent.deptno));
     this.newStudent.id=0;

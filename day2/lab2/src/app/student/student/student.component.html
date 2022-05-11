@@ -1,4 +1,19 @@
 <h1>Students</h1>
+<input type="text" [(ngModel)]="name">
+<button (click)="names.push(name)">add name</button>
+<ul>
+    <li *ngFor="let name of names|myfilter">
+        {{name}}
+        
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let name of names">
+        {{name}}
+        
+    </li>
+</ul>
 ID:
 <input type=" text " [(ngModel)]="newStudent.id">
  Name:

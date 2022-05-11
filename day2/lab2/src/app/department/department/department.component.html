@@ -26,7 +26,7 @@ ID:
         <tr *ngFor="let department of departments; let i=index ">
             <td>{{i+1}}</td>
             <td>{{department.id}}</td>
-            <td>{{department.deptname}}</td>
+            <td>{{department.deptname | appendString}} </td>
             <td>{{department.location}}</td>
             <td>
                 <button class="btn btn-info" (click)="showDepartment(department.id)">View</button>
