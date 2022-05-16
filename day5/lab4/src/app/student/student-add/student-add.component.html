@@ -1,0 +1,20 @@
+<!-- <input type="text" [(ngModel)]="nstd._id">
+<input type="text" [(ngModel)]="nstd.name">
+<input type="text" [(ngModel)]="nstd.age">
+<button (click)="save()">add</button> -->
+
+<form #add="ngForm" (ngSubmit)="save()">
+    <input type="text" [(ngModel)]="nstd._id" name="id" #uid="ngModel" required>
+    <span *ngIf="uid.invalid">*</span>
+    <br>
+    <input type="text" name="name" [(ngModel)]="nstd.name" #uname="ngModel" required minlength="3">
+    <span *ngIf="uname.errors?.['required']&&uname.touched">name is Required</span>
+    <span *ngIf="uname.errors?.['minlength']&&uname.touched">name min length is 3</span>
+    <br>
+    <input type="text" name="email" [(ngModel)]="nstd.age" #uage="ngModel" required >
+    <span *ngIf="uage.errors?.['required']&&uage.touched">email required</span>
+
+    <input type="submit" [disabled]="add.invalid">
+</form>
+<!-- {{signup.value|json}}
+<button (click)="showForm(uemail )">show</button> -->
