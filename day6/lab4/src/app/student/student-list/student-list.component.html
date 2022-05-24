@@ -1,0 +1,25 @@
+<h1>students</h1>
+<!-- <app-student-add></app-student-add> -->
+<a routerLink="/students/add">Add students</a>
+<button (click)="showAdd()">show add </button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let item of stdlst">
+            <td >{{item._id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>
+                <a [routerLink]="['/students/details',item._id]">details</a>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
